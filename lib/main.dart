@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/home.dart';
+import 'package:news_app/screens/news_details.dart';
 
 void main() {
   runApp(
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
+        NewsDetails.routeName: (Context) => NewsDetails(),
       },
     );
   }

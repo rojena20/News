@@ -67,30 +67,30 @@ class DrawerIcon extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    onIconPresses(settingsID);
-                    Navigator.pop(context);
-                  },
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.settings,
-                        size: 30,
-                      ),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Text(
-                        "Settings",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // GestureDetector(
+                //   onTap: () {
+                //     onIconPresses(settingsID);
+                //     Navigator.pop(context);
+                //   },
+                //   child: Row(
+                //     children: [
+                //       Icon(
+                //         Icons.settings,
+                //         size: 30,
+                //       ),
+                //       SizedBox(
+                //         width: 8.0,
+                //       ),
+                //       Text(
+                //         "Settings",
+                //         style: TextStyle(
+                //           fontWeight: FontWeight.bold,
+                //           fontSize: 20,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),

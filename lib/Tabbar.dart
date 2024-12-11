@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/news_item.dart';
 import 'package:news_app/tab_item.dart';
-
 import 'apis/api_maneger.dart';
+import 'models/NewsDataResponse.dart';
 
 class tabBar extends StatefulWidget {
   String id;
+  Function onArticlesLoades;
+  List<Articles> articles;
 
   tabBar({
     super.key,
     required this.id,
+    required this.onArticlesLoades,
+    required this.articles,
   });
 
   @override

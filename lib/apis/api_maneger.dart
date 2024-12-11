@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:news_app/models/sourceResponse.dart';
 
 import '../models/NewsDataResponse.dart';
+import '../models/Search.dart';
 
 class ApiManeger {
   //https://newsapi.org/v2/everything?q=bitcoin&apiKey=c52a3e3912324eddb9fad927b6629465
@@ -35,5 +36,14 @@ class ApiManeger {
     Map<String, dynamic> jsonFormat = jsonDecode(response.body);
     NewsDataResponse newsData = NewsDataResponse.fromJson(jsonFormat);
     return newsData;
+  }
+
+  static Future<Search> searchArticles(String id,String query) async {
+    Uri url = Uri.https("newsapi.org", "/v2/everything",
+        {"apiKey": "c52a3e3912324eddb9fad927b6629465","q": query,"category": id});
+    var response = await http.get(url);
+    Map<String, dynamic> json = jsonDecode(response.body);
+    Search results = Search.fromJson(json);
+    return results;
   }
 }
