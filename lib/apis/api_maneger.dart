@@ -38,9 +38,11 @@ class ApiManeger {
     return newsData;
   }
 
-  static Future<Search> searchArticles(String id,String query) async {
-    Uri url = Uri.https("newsapi.org", "/v2/everything",
-        {"apiKey": "c52a3e3912324eddb9fad927b6629465","q": query,"category": id});
+  static Future<Search> searchArticles(String query) async {
+    Uri url = Uri.https("newsapi.org", "/v2/everything", {
+      "apiKey": "c52a3e3912324eddb9fad927b6629465",
+      "q": query,
+    });
     var response = await http.get(url);
     Map<String, dynamic> json = jsonDecode(response.body);
     Search results = Search.fromJson(json);

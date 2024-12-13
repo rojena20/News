@@ -55,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
     try {
       var response =
-      await ApiManeger.searchArticles(selectedCategory?.id??"",query); // Make the API call
+      await ApiManeger.searchArticles(query); // Make the API call
       setState(() {
-        searchResults = response.articles as List<Articles>; // Update the search results
+        searchResults = response.articles?.map((e) => Articles.fromJson(e)).toList()??[]; // Update the search results
       });
     } catch (e) {
       print('Error during search: $e');
